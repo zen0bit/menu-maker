@@ -20,10 +20,10 @@ from MenuMaker import msg, warn, fatal, fronts, terms
 
 
 writeToStdout	= False # Output the generated menu to stdout instead of the menu file
-forceWrite		= False # Overwrite existing files
-noDesktop		= False # Do not scan for .desktop files
-noLegacy		= False # Do not scan for the legacy apps
-noDebian		= False # Exclude Debian apps database
+forceWrite	= False # Overwrite existing files
+noDesktop	= False # Do not scan for .desktop files
+noLegacy	= False # Do not scan for the legacy apps
+noDebian	= False # Exclude Debian apps database
 
 
 
