@@ -29,12 +29,12 @@ writeFullMenu	= True  # Whether to generate the entire menu or just a part to be
 
 
 fronts = {
-	Kw("IceWM")			: KwS("IceWM"),
+	Kw("IceWM")		: KwS("IceWM"),
 	Kw("BlackBox")		: KwS("BlackBox"),
 	Kw("FluxBox")		: KwS("FluxBox"),
-	Kw("PekWM")			: KwS("PekWM"),
+	Kw("PekWM")		: KwS("PekWM"),
 	Kw("Deskmenu")		: KwS("Deskmenu"),
-	Kw("Xfce4")			: KwS("Xfce", "Xfce4"),
+	Kw("Xfce4")		: KwS("Xfce", "Xfce4"),
 	Kw("OpenBox3")		: KwS("OpenBox", "OpenBox3"),
 	Kw("WindowMaker")	: KwS("WindowMaker", "WMaker")
 }
