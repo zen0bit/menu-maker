@@ -152,7 +152,7 @@ class App(object) :
 	Console			= Kw("Console")
 	XWindow			= Kw("XWindow")
 	GNOME			= Kw("GNOME")
-	KDE				= Kw("KDE")
+	KDE			= Kw("KDE")
 	Xfce			= Kw("Xfce")
 	GNUstep			= Kw("GNUstep")
 
