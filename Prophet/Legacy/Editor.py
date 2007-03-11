@@ -146,6 +146,17 @@ class nedit(_App, _X11App) :
 
 
 
+# This adds in the open office writer which is sometimes found via 
+# .desktop files making it appear twice.
+
+class oowriter(_App, _X11App) :
+	name = "Open Office"
+	comment = "Open Office"
+	keywords = KwS(TextEditor)
+	exes = ["oowriter2"]
+
+
+
 
 class pico(_App, _ConsoleApp) :
 	name = "Pico"
