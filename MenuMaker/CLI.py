@@ -122,7 +122,8 @@ def tOpt(option, opt, value, parser) :
 class OP(_OP) :
 	def print_help(self) :
 		sys.stdout.write("This is %s %s, a 100%% Python heuristics-driven menu generator\n" % (MenuMaker.pkgName, MenuMaker.pkgVer))
-		sys.stdout.write("%s %s %s <%s>\n\n" % (MenuMaker.pkgHome, MenuMaker.copyright, MenuMaker.author, MenuMaker.email))
+		sys.stdout.write("%s %s %s %s\n" % (MenuMaker.pkgHome, MenuMaker.copyright, MenuMaker.author, MenuMaker.email))
+		sys.stdout.write("%s %s %s %s\n\n" % (MenuMaker.pkgHome, MenuMaker.copyright2, MenuMaker.author2, MenuMaker.email2))		
 		_OP.print_help(self)
 		sys.stdout.write("\nSupported frontends (case insensitive):\n")
 		for v in fronts.values() :
@@ -130,17 +131,20 @@ class OP(_OP) :
 			s = str(vars[0])
 			for x in vars[1:] :
 				s += " | " + str(x)
-			sys.stdout.write("  %s\n" % s)
+			sys.stdout.write("  %s," % s)
+		sys.stdout.write("\n")
 		sys.stdout.write("\nSupported terminal emulators for -t (used in console apps, case insensitive), in order of decreasing preference:\n")
 		for t, n in terms :
 			vars = list(n)
 			s = str(vars[0])
 			for x in vars[1:] :
 				s += " | " + str(x)
-			sys.stdout.write("  %s\n" % s)
+			sys.stdout.write(" %s," % s)
+		sys.stdout.write("\n")
 		sys.stdout.write("\nSupported skip categories for -s (case insensitive):\n")
 		for k in sKwS :
-			sys.stdout.write("  %s\n" % k)
+			sys.stdout.write(" %s, " % k)
+		sys.stdout.write("\n")
 
 
 
