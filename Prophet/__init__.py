@@ -258,6 +258,7 @@ class App(object) :
 		# Raise NotSet if cmd is not "good enough" and thus isn't worth further consideration
 		# Current implementation filters out complex commands and commands
 		# that are started with ?sh (a frequent Debian case)
+                cmd = str(cmd)
 		if _shStart.search(cmd) or _shComplexCmd.search(cmd) :
 			raise NotSet("not good enough : " + cmd)
 
