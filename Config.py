@@ -1,6 +1,6 @@
 pkgHome		= "http://menumaker.sourceforge.net"
 pkgName		= "MenuMaker"
-pkgVer		= "0.99.7"
+pkgVer		= "0.99.8a"
 
 
 
@@ -12,4 +12,4 @@ copyright	= "(c) 2002-2006"
 
 author2		= "Oleg A. Khlybov, Steve Fullenwider"
 email2		= "<fougas@mail.ru>, <sfullenwider@hellburner.com>"
-copyright2	= "(c) 2007"
+copyright2	= "(c) 2007-2008"
