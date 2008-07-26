@@ -10,6 +10,14 @@ class xpcd(_App, _X11App) :
 
 
 
+class krita(_App, _X11App) :
+        name = "Krita"
+        comment = "Bitmap graphics editor"
+        keywords = KwS(Graphics, RasterGraphics, 2DGraphics, KDE)
+
+
+
+
 class ufraw(_App, _X11App) :
 	name = "ufraw"
 	comment = "Unidentified Flying RAW"
