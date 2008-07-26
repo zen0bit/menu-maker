@@ -132,8 +132,8 @@ class rox(_App, _X11App) :
 
 
 class mrxvt(_Terminal) :
-        name = "Tabbed rxvt"
-        comment = "Tabbed rxvt"
+        name = "rxvt [tabbed]"
+        comment = "rxvt [tabbed]"
         keywords = KwS(TerminalEmulator, Shell)
 
 
