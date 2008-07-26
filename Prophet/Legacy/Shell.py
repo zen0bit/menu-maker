@@ -139,6 +139,14 @@ class mrxvt(_Terminal) :
 
 
 
+class urxvt(_Terminal) :
+        name = "rxvt [unicode]"
+        comment = "rxvt [unicode]"
+        keywords = KwS(TerminalEmulator, Shell)
+
+
+
+
 class tuxcmd(_App, 
 _X11App) :
 	name = "TuxCommander"
