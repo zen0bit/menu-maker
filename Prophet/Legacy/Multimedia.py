@@ -329,14 +329,6 @@ class xmps(_App, _X11App) :
 
 
 
-class xpcd(_App, _X11App) :
-	name = "XPCD"
-	comment = "PhotoCD Viewer"
-	keywords = KwS(Graphics, Photograph, Viewer)
-
-
-
-
 class zinf(_App, _X11App) :
 	name = "Zinf"
 	comment = "Media player"

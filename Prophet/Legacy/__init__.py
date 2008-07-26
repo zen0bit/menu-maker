@@ -148,7 +148,7 @@ class DropIn(App) :
 
 
 
-__legacy__ = ["Development", "Editor", "Emulator", "Multimedia", "Network", "Shell"]
+__legacy__ = ["Development", "Editor", "Emulator", "Graphics", "Multimedia", "Network", "Shell"]
 
 
 
