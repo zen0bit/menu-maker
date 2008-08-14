@@ -135,6 +135,16 @@ class eroaster(_App, _X11App) :
 
 
 
+
+class googleearth(_App, _X11App) :
+	name = "Google Earth"
+	comment = "Google Earth"
+	keywords = KwS(Education, Amusement)
+
+
+
+
+
 class _HelixReal(_App, _X11App) :
 	comment = "Media player"
 	keywords = KwS(AudioVideo, Audio, Video, TV, Tuner, Player, GTK)

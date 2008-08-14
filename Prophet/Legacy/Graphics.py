@@ -16,7 +16,7 @@ class xpcd(_App, _X11App) :
 class krita(_App, _X11App) :
         name = "Krita KDE Bitmap Graphics Editor"
         comment = "Krita KDE Bitmap graphics editor"
-        keywords = KwS(Graphics, RasterGraphics, 2DGraphics, KDE)
+        keywords = KwS(Graphics, RasterGraphics, KDE)
 
 
 
