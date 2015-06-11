@@ -131,24 +131,7 @@ class rox(_App, _X11App) :
 
 
 
-class mrxvt(_Terminal) :
-        name = "rxvt [tabbed]"
-        comment = "rxvt [tabbed]"
-        keywords = KwS(TerminalEmulator, Shell)
-
-
-
-
-class urxvt(_Terminal) :
-        name = "rxvt [unicode]"
-        comment = "rxvt [unicode]"
-        keywords = KwS(TerminalEmulator, Shell)
-
-
-
-
-class tuxcmd(_App, 
-_X11App) :
+class tuxcmd(_App, _X11App) :
 	name = "TuxCommander"
 	comment = "File manager for X"
 	keywords = KwS(FileManager, Shell)

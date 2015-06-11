@@ -152,7 +152,7 @@ def scan() :
 				try :
 					result.append(App(os.path.join(w[0], x)))
 					if verbose > 1 : msg("ok")
-				except (NotDesktop, Prophet.NotSet), e :
+				except (NotDesktop, Prophet.NotSet) as e :
 					if verbose > 1 : msg("REJECTED : " + str(e))
 	msg(" %d apps found" % len(result))
 	return result
@@ -237,7 +237,7 @@ class NotDesktop(Exception) :
 def _string(x) :
 	"""Pick up the most appropriate string representation out of all specified variants
 		Choice is made with respect to current locale and type of specified argument"""
-	if type(x) == types.DictType :
+	if type(x) == dict :
 		return x[""]
 	# FIXME : locale handling
 	else :

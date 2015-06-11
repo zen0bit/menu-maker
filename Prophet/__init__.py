@@ -5,7 +5,7 @@ import types, sys, os, os.path, stat, string, fnmatch, re
 
 from Paths import ValidPathSet as VPS
 from Keywords import Set as KwS, Keyword as Kw
-from Categories import *
+from Prophet.Categories import *
 
 
 
@@ -63,9 +63,7 @@ def isExe(exe) :
 	# Exec's have x-bit set for current uid, aren't directories, and don't have leading dot
 	try :
 		st = os.stat(exe)
-		return (stat.S_IMODE(st[stat.ST_MODE]) & 0100) \
-			and not stat.S_ISDIR(st[stat.ST_MODE]) \
-			and not os.path.basename(exe).startswith(".")
+		return (stat.S_IMODE(st[stat.ST_MODE]) & stat.S_IXUSR) and not stat.S_ISDIR(st[stat.ST_MODE]) and not os.path.basename(exe).startswith(".")
 	except OSError :
 		return False
 
@@ -128,7 +126,7 @@ paths = PathSet(os.environ["PATH"].split(":"))
 
 # Set of valid prefixes
 prefixes = PrefixSet([os.path.dirname(x) for x in paths]) \
-	+ ["~", "/", "/usr", "/usr/local", "/usr/X11", "/usr/X11R7", "/usr/X11R6", "/usrX11R5", "/opt", "$QTDIR", "$KDEDIR"]
+	+ ["~", "/", "/usr", "/usr/local", "/usr/X11", "/usr/X11R7", "/usr/X11R6", "/usr/X11R5", "/opt", "$QTDIR", "$KDEDIR"]
 
 
 
@@ -152,7 +150,7 @@ class App(object) :
 	Console			= Kw("Console")
 	XWindow			= Kw("XWindow")
 	GNOME			= Kw("GNOME")
-	KDE			= Kw("KDE")
+	KDE				= Kw("KDE")
 	Xfce			= Kw("Xfce")
 	GNUstep			= Kw("GNUstep")
 
@@ -258,7 +256,6 @@ class App(object) :
 		# Raise NotSet if cmd is not "good enough" and thus isn't worth further consideration
 		# Current implementation filters out complex commands and commands
 		# that are started with ?sh (a frequent Debian case)
-                cmd = str(cmd)
 		if _shStart.search(cmd) or _shComplexCmd.search(cmd) :
 			raise NotSet("not good enough : " + cmd)
 

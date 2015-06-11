@@ -48,13 +48,13 @@ def scan() :
 			if verbose > 1 : msg("\nparsing " + f)
 			try :
 				entries = _parse(f)
-			except NotSet, e :
+			except NotSet as e :
 				if verbose > 1 : msg("REJECTED : " + str(e))
 			else :
 				for e in entries :
 					try :
 						result.append(App(e))
-					except Prophet.NotSet, e :
+					except Prophet.NotSet as e :
 						if verbose > 1 : msg("REJECTED : " + str(e))
 	msg(" %d apps found" % len(result))
 	return result

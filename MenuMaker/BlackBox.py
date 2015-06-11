@@ -4,7 +4,7 @@ import os.path, MenuMaker, Prophet, Prophet.Legacy
 
 
 from MenuMaker import indent, writeFullMenu
-from xBox import X, App, Menu, Root as _Root
+from MenuMaker.xBox import X, App, Menu, Root as _Root
 
 
 

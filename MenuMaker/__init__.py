@@ -2,10 +2,8 @@ import sys
 
 
 
-
-if not (sys.version_info[0] >= 2 and sys.version_info[1] >= 3) :
-    fatal("Python 2.3 or higher is required")
-
+if not (sys.version_info[0]*100 + sys.version_info[1]*10 + sys.version_info[2] >= 270) :
+    sys.exit("Python 2.7 or higher is required")
 
 
 
@@ -29,12 +27,12 @@ writeFullMenu	= True  # Whether to generate the entire menu or just a part to be
 
 
 fronts = {
-	Kw("IceWM")		: KwS("IceWM"),
+	Kw("IceWM")			: KwS("IceWM"),
 	Kw("BlackBox")		: KwS("BlackBox"),
 	Kw("FluxBox")		: KwS("FluxBox"),
-	Kw("PekWM")		: KwS("PekWM"),
+	Kw("PekWM")			: KwS("PekWM"),
 	Kw("Deskmenu")		: KwS("Deskmenu"),
-	Kw("Xfce4")		: KwS("Xfce", "Xfce4"),
+	Kw("Xfce4")			: KwS("Xfce", "Xfce4"),
 	Kw("OpenBox3")		: KwS("OpenBox", "OpenBox3"),
 	Kw("WindowMaker")	: KwS("WindowMaker", "WMaker")
 }
@@ -182,11 +180,12 @@ class Menu(Entry, list) :
 				top.append(x)
 			elif x.align == Entry.StickBottom :
 				bottom.append(x)
-		mfloat.sort(Menu.compare)
-		efloat.sort(Menu.compare)
+		mfloat.sort(key = Menu.extract)
+		efloat.sort(key = Menu.extract)
 		self[:] = top + mfloat + efloat + bottom
 
-	compare = staticmethod(lambda x, y : cmp(x.name.lower(), y.name.lower()))
+	#compare = staticmethod(lambda x, y : cmp(x.name.lower(), y.name.lower()))
+	extract = staticmethod(lambda v : v.name.lower())
 
 
 

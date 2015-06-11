@@ -98,7 +98,7 @@ class ZeroG(App) :
 	def getPrefixes(self) :
 		prefixes = super(ZeroG, self).getPrefixes()
 		try :
-			zerog = file(os.path.expanduser(self.registry), "r")
+			zerog = open(os.path.expanduser(self.registry), "r")
 			pattern = re.compile(".*<product.*name=\"(%s)\".*location=\"(.*)\".*last_modified=\"(.*)\".*>.*" % self.magic)
 			found = []
 			for x in zerog :
@@ -122,15 +122,17 @@ class DropIn(App) :
 
 	dropRoots = ["~"]
 
-	class StopDescention(Exception) : pass
+	class StopDescention(Exception) :
+		def __init__(self, value) :
+			self.value = value
 
 	def getPrefixes(self) :
 		prefixes = super(DropIn, self).getPrefixes()
 		try :
 			for r in self.dropRoots :
 				self.descend(os.path.expanduser(r), 1)
-		except DropIn.StopDescention, path :
-			prefixes += path
+		except DropIn.StopDescention as e :
+			prefixes += e.value
 		return prefixes
 
 	def descend(self, path, depth) :
@@ -148,7 +150,7 @@ class DropIn(App) :
 
 
 
-__legacy__ = ["Development", "Editor", "Emulator", "Graphics", "Multimedia", "Network", "Shell"]
+__legacy__ = ["Development", "Editor", "Emulator", "Multimedia", "Graphics", "Network", "Shell"]
 
 
 

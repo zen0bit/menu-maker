@@ -107,10 +107,6 @@ class vmware(_App, _X11App) : # FIXME : may reside in its own prefix
 
 # TODO : vmware, xen
 
-class VirtualBox(_App, _X11App) :
-	name = "VirtualBox"
-	comment = "VirtualBox x86 virtualization software"
-	keywords = KwS(Emulator)
 
 
 
