@@ -1,4 +1,4 @@
-import re, os.path, glob, fnmatch, Prophet
+import re, os.path, glob, fnmatch, codecs, Prophet
 
 
 
@@ -64,7 +64,10 @@ def scan() :
 
 def _parse(debmenu) :
 	try :
-		file = open(debmenu)
+		# Latest Py3 versions in 64-bit mode sometimes have problems decoding Debian menus
+		# complaining about malformed utf-8 codes, therefore one has to enforce the 8-bit encoding.
+		# encoding= is not supported by Py2, so use codecs.open() as the least common denominator.
+		file = codecs.open(debmenu, 'r', 'latin1') # Py 2.4+
 	except IOError :
 		raise NotSet("couldn't read the file " + debmenu)
 	entry = ""
@@ -219,15 +222,15 @@ _secs = {
 	Kw("Educational") : (Education,),
 	Kw("Emulators") : (Emulator,),
 	Kw("Games") : (Game,),
-		Kw("Adventure") : (AdventureGame, Game),
-		Kw("Arcade") : (ArcadeGame, Game),
-		Kw("Board") : (BoardGame, Game),
-		Kw("Card") : (CardGame, Game),
-		Kw("Puzzles") : (LogicGame, Game),
-		Kw("Simulation") : (Simulation, Game),
-		Kw("Sports") : (SportsGame, Game),
-		Kw("Strategy") : (StrategyGame, Game),
-		Kw("Tetris-like") : (BlocksGame, Game),
+	Kw("Adventure") : (AdventureGame, Game),
+	Kw("Arcade") : (ArcadeGame, Game),
+	Kw("Board") : (BoardGame, Game),
+	Kw("Card") : (CardGame, Game),
+	Kw("Puzzles") : (LogicGame, Game),
+	Kw("Simulation") : (Simulation, Game),
+	Kw("Sports") : (SportsGame, Game),
+	Kw("Strategy") : (StrategyGame, Game),
+	Kw("Tetris-like") : (BlocksGame, Game),
 	Kw("Graphics") : (Graphics,),
 	Kw("Hamradio") : (HamRadio, Network),
 	Kw("Math") : (Math, Science),
@@ -239,13 +242,13 @@ _secs = {
 	Kw("Shells") : (Shell, ConsoleOnly), # ???
 	Kw("Sound") : (Audio, AudioVideo),
 	Kw("System") : (System,),
-		Kw("Admin") : (Settings, System),
-#		Kw("GNOME") : (GNOME, GTK),
+	Kw("Admin") : (Settings, System),
+#	Kw("GNOME") : (GNOME, GTK),
 	Kw("Technical") : (Engineering,),
 	Kw("Text") : (TextEditor, Utility),
 	Kw("Tools") : (Utility,),
 	Kw("Viewers") : (Viewer, Graphics),
-		Kw("XawTV") : (TV, Viewer, Video, AudioVideo),
+	Kw("XawTV") : (TV, Viewer, Video, AudioVideo),
 	Kw("Toys") : (Amusement,),
 	Kw("Help") : (Utility, Kw("X-Help")),
 	Kw("Screen") : (Utility,), # ???
