@@ -1,4 +1,4 @@
-import sys, types, os, os.path, fnmatch, re, Prophet
+import sys, types, os, os.path, fnmatch, re, codecs, Prophet
 
 
 
@@ -183,7 +183,8 @@ def _parse(desktop) :
 	section = []
 	inSection = False
 	try :
-		xs = open(desktop).readlines()
+		# .desktop files must be in UTF-8 encoding anyways.
+		xs = codecs.open(desktop, "r", "utf-8").readlines() # Py 2.4+
 	except IOError :
 		raise NotDesktop("i/o error while reading .desktop file")
 	for x in xs :

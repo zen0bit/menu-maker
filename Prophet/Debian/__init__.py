@@ -67,7 +67,7 @@ def _parse(debmenu) :
 		# Latest Py3 versions in 64-bit mode sometimes have problems decoding Debian menus
 		# complaining about malformed utf-8 codes, therefore one has to enforce the 8-bit encoding.
 		# encoding= is not supported by Py2, so use codecs.open() as the least common denominator.
-		file = codecs.open(debmenu, 'r', 'latin1') # Py 2.4+
+		file = codecs.open(debmenu, "r", "latin1") # Py 2.4+
 	except IOError :
 		raise NotSet("couldn't read the file " + debmenu)
 	entry = ""

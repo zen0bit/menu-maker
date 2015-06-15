@@ -1,0 +1,1052 @@
+?package(aisleriot):needs="X11" section="Games/Card" \
+	title="Gnome Solitaire Games" command="/usr/games/sol" \
+	icon="/usr/share/pixmaps/aisleriot.xpm"
+?package(alsamixergui):needs="X11" section="Apps/Sound"\
+  title="Alsamixergui" command="/usr/bin/alsamixergui" \
+  icon="/usr/share/pixmaps/alsamixergui.xpm"
+?package(anjuta):needs="X11" section="Applications/Programming"\
+  title="anjuta" icon="/usr/share/pixmaps/anjuta.xpm" command="/usr/bin/anjuta"
+?package(aptitude):needs="text" section="Applications/System/Package Management" \
+  title="Aptitude Package Manager (text)" command="/usr/bin/aptitude-curses" \
+  hints="apt"
+?package(baobab):needs="X11" \
+  section="Applications/File Management" \
+  title="Baobab" command="/usr/bin/baobab" \
+  icon="/usr/share/pixmaps/baobab.xpm" hints="Gnome"
+
+?package(bash):needs="text" section="Applications/Shells" title="Bash" command="/bin/bash --login"
+?package(bash):needs="text" section="Applications/Shells" title="Sh" command="/bin/sh --login"
+?package(bc):needs="text" section="Applications/Science/Mathematics" title="Bc" hints="Calculators" command="/usr/bin/bc"
+# Blackbox 0.70.0 menu file
+#
+# Others WM can now display a Blackbox icon in the debian menu
+# (useless, isnt'it ? ;) )
+#
+?package(blackbox):needs="wm" \
+  section="Window Managers" \
+  title="Blackbox" \
+  command="/usr/bin/blackbox" \
+  icon16x16="/usr/share/pixmaps/mini-blackbox.xpm" \
+  icon32x32="/usr/share/pixmaps/blackbox.xpm"
+
+#
+# As Lintian and other package's checker complain about
+# unknown commands, such stylesdir or worspaces, (which is
+# true as they are internal to Blackbox and not binaries),
+# we feed the command item with blackbox, and use longtitle
+# to configure our menu (see blackbox.menu-method)
+# 
+# Entries are sorted according to title, so we provide
+# `fake' titles to ensure a correct order.
+#
+# The window manager submenu should only contain WM entries
+# (sic), so we've moved reconfigure, restart and exit in the
+# Blackbox submenu.
+#
+# Thus, Blackbox menu looks like:
+#
+# Configuration
+#    Styles      ->  [list of user's styles]
+#   Worspace        -----------sep-----------
+# -----sep-----     [list of standard styles]
+#  Reconfigure
+#    Restart
+#     exit
+#
+
+#
+# Here title is A10 (which should never be displayed), 
+# and longtitle is the real command (config)
+#
+?package(blackbox):needs="blackbox" \
+	section="Blackbox" \
+  command="blackbox" \
+  title="A10" \
+	longtitle="config" \
+  description="Configuration"
+
+?package(blackbox):needs="blackbox" \
+	section="Blackbox/Styles" \
+  command="blackbox" \
+  title="010" \
+	longtitle="stylesdir" \
+  description="~/.blackbox/styles"
+?package(blackbox):needs="blackbox" \
+	section="Blackbox/Styles" \
+  command="blackbox" \
+  title="011" \
+	longtitle="sep" \
+  description="none"
+?package(blackbox):needs="blackbox" \
+	section="Blackbox/Styles" \
+  command="blackbox" \
+  title="012" \
+	longtitle="stylesdir" \
+  description="/usr/share/blackbox/styles"
+
+?package(blackbox):needs="blackbox" \
+	section="Blackbox" \
+  command="blackbox" \
+  title="Z30" \
+	longtitle="workspaces" \
+  description="Workspaces"
+
+?package(blackbox):needs="blackbox" \
+	section="Blackbox" \
+  command="blackbox" \
+  title="Z40" \
+	longtitle="sep" \
+  description="none"
+
+?package(blackbox):needs="blackbox" \
+	section="Blackbox" \
+  command="blackbox" \
+  title="Z50" \
+	longtitle="reconfig" \
+  description="Reconfigure"
+?package(blackbox):needs="blackbox" \
+	section="Blackbox" \
+  command="blackbox" \
+  title="Z51" \
+	longtitle="restart"  \
+  description="Restart"
+?package(blackbox):needs="blackbox" \
+	section="Blackbox" \
+  command="blackbox" \
+  title="Z52" \
+	longtitle="exit" \
+  description="Exit"
+
+?package(blender):needs="X11" section="Applications/Graphics" hints="Modeler"\
+  longtitle="Blender 3D modeler / renderer"\
+  icon="/usr/share/pixmaps/blender-32x32.xpm"\
+  title="Blender" command="/usr/bin/blender"
+?package(brasero): needs="X11" section="Applications/File Management" title="Brasero" longtitle="Brasero - CD/DVD burning application for GNOME" command="/usr/bin/brasero"
+?package(cinnamon-control-center):needs="X11" section="Applications/System/Administration" \
+  hints="Gnome" title="Cinnamon Control Center" \
+  icon="/usr/share/pixmaps/cinnamon-control-center.xpm" \
+  command="/usr/bin/cinnamon-control-center"
+?package(clipit):needs="X11" section="Applications/Text"\
+  title="ClipIt" command="/usr/bin/clipit"
+?package(dash): \
+  title="Dash"\
+  needs="text"\
+  section="Applications/Shells"\
+  command="/bin/dash -i"
+?package(dc):needs="text" title="Dc" section="Applications/Science/Mathematics" hints="Calculators" command="/usr/bin/dc"
+?package(eclipse-platform):needs="X11" title="Eclipse" command="eclipse" section="Applications/Programming"
+?package(eog):needs="X11" section="Applications/Viewers" \
+  title="Eye of GNOME" hints="Images" command="/usr/bin/eog" \
+  longtitle="View many different types of images" \
+  icon="/usr/share/pixmaps/gnome-eog.xpm"
+?package(evince):needs="X11" section="Applications/Viewers"\
+ title="Evince" command="/usr/bin/evince"\
+ hints="Documents,GNOME" icon="/usr/share/pixmaps/evince.xpm"
+?package(evolution):needs="X11" section="Applications/Network/Communication" \
+  title="Evolution" command="/usr/bin/evolution" \
+  hints="Gnome,Mail,Calendar" icon="/usr/share/pixmaps/evolution.xpm"
+?package(exfalso):needs="X11" \
+ section="Applications/Sound" \
+ title="Ex Falso" \
+ command="/usr/bin/exfalso"
+?package(file-roller):needs="X11" \
+	section="Applications/File Management" \
+	hints="Gnome, file" \
+	command="/usr/bin/file-roller" \
+	title="File-Roller" \
+	longtitle="File-Roller: GNOME archiver" \
+	icon="/usr/share/pixmaps/file-roller.xpm"
+?package(fluxbox):needs="wm" section="Window Managers" title="FluxBox" command="/usr/bin/startfluxbox"
+?package(fvwm):\
+  needs="wm"\
+  section="Window Managers"\
+  title="FVWM"\
+  longtitle="FVWM Windows Manager"\
+  command="/usr/bin/fvwm2"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmAnimate"\
+  longtitle="FvwmAnimate: animate iconification and deiconification"\
+  command="FvwmAnimate"
+
+?package(fvwm):\
+  needs="fvwmother"\
+  section="FVWM Modules"\
+  title="FvwmAnimate menu"\
+  longtitle="Configuration menu for FvwmAnimate (after FvwmAnimate started)"\
+  command="Popup MenuFvwmAnimate"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmAuto"\
+  longtitle="FvwmAuto: autoraise windows with keyboard input focus"\
+  command="FvwmAuto 300 raise lower"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmBacker"\
+  longtitle="FvwmBacker: change the background when changing desktops"\
+  command="FvwmBacker"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmBanner"\
+  longtitle="FvwmBanner: display the FVWM logo for 3 seconds"\
+  command="FvwmBanner"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmButtons"\
+  longtitle="FvwmButtons: display a command button panel"\
+  command="FvwmButtons"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmButtons (Debian)"\
+  longtitle="FvwmButtons (Debian version): display a command button panel"\
+  command="FvwmButtons DebianFvwmButtons"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmCommandS"\
+  longtitle="FvwmCommandS: initialise FvwmCommand handling"\
+  command="FvwmCommandS"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmConsole"\
+  longtitle="FvwmConsole: a way to type commands for FVWM to execute"\
+  command="FvwmConsole"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmCpp"\
+  longtitle="FvwmCpp: cpp"\
+  command="FvwmCpp"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmDebug"\
+  longtitle="FvwmDebug: debug"\
+  command="FvwmDebug"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmDragWell"\
+  longtitle="FvwmDragWell: drag"\
+  command="FvwmDragWell"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmEvent"\
+  longtitle="FvwmEvent: binds actions to events, such as audio actions"\
+  command="FvwmEvent"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmForm"\
+  longtitle="FvwmForm: Form"\
+  command="FvwmForm"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmGtk"\
+  longtitle="FvwmGtk: create menus and dialogs using GTK+ toolkit"\
+  command="FvwmGtk"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmIconBox"\
+  longtitle="FvwmIconBox: an icon manager"\
+  command="FvwmIconBox"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmIconMan"\
+  longtitle="FvwmIconMan: another icon manager"\
+  command="FvwmIconMan"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmIdent"\
+  longtitle="FvwmIdent: show info about a selected window"\
+  command="FvwmIdent"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmM4"\
+  longtitle="FvwmM4: m4"\
+  command="FvwmM4"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmPager"\
+  longtitle="FvwmPager: virtual desktop manager"\
+  command="FvwmPager 0 0"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmProxy"\
+  longtitle="FvwmProxy: manage obscured windows using proxy windows"\
+  command="FvwmProxy"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmRearrange (vert)"\
+  longtitle="FvwmRearrange: rearrange windows on screen in a vertical fashion"\
+  command="FvwmRearrange -tile"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmRearrange (horiz)"\
+  longtitle="FvwmRearrange: rearrange windows on screen in a horizontal fashion"\
+  command="FvwmRearrange -tile -h"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmRearrange (cascade)"\
+  longtitle="FvwmRearrange: rearrange windows on screen in a cascading fashion"\
+  command="FvwmRearrange -cascade"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmSave"\
+  longtitle="FvwmSave: save desktop layout to new.xinitrc (pseudo-.xinitrc)"\
+  command="FvwmSave"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmSaveDesk"\
+  longtitle="FvwmSaveDesk: save desktop layout to .fvwm2desk file"\
+  command="FvwmSaveDesk"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmScript"\
+  longtitle="FvwmScript: script"\
+  command="FvwmScript"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmScroll"\
+  longtitle="FvwmScroll: add scroll bars to selected window"\
+  command="FvwmScroll"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmTalk"\
+  longtitle="FvwmTalk: type commands into a window for FVWM to execute"\
+  command="FvwmTalk"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmTaskBar"\
+  longtitle="FvwmTaskBar: show a Windows 95/98 type task bar"\
+  command="FvwmTaskBar"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmTheme"\
+  longtitle="FvwmTheme: theme"\
+  command="FvwmTheme"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmTile"\
+  longtitle="FvwmTile: tile"\
+  command="FvwmTile"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmWharf"\
+  longtitle="FvwmWharf: free-floating application loader and executer"\
+  command="FvwmWharf"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmWinList"\
+  longtitle="FvwmWinList: show a window list for quick navigation"\
+  command="FvwmWinList"
+
+?package(fvwm):\
+  needs="fvwmmodule"\
+  section="FVWM Modules"\
+  title="FvwmWindowMenu"\
+  longtitle="FvwmWindowMenu: show a menu listing current windows"\
+  command="FvwmWindowMenu"
+?package(galculator): \
+needs="X11" \
+section="Applications/Science/Mathematics" \
+title="galculator" \
+command="/usr/bin/galculator" \
+icon="/usr/share/pixmaps/galculator.xpm"
+?package(gdb):needs="text" title="GDB" section="Applications/Programming"\
+	hints="Debuggers" command="/usr/bin/gdb"
+
+?package(geany):needs="X11" section="Applications/Programming" \
+	hints="IDE,Small,Gtk" \
+	icon="/usr/share/pixmaps/geany.xpm" \
+  title="Geany" command="/usr/bin/geany"
+?package(gedit):\
+    needs="x11"\
+    section="Applications/Editors"\
+    title="Gedit"\
+    longtitle="Light-weight GNOME text editor"\
+    icon="/usr/share/pixmaps/gedit-icon.xpm"\
+    command="/usr/bin/gedit"
+?package(gimp):command="/usr/bin/gimp" icon="/usr/share/pixmaps/gimp.xpm" needs="X11" \
+	section="Applications/Graphics" title="The GIMP" hints="Bitmap" \
+	hotkey="Gimp"
+?package(gksu):\
+needs="x11"\
+section="Applications/Terminal Emulators"\
+title="X-Terminal as root (GKsu)"\
+longtitle="Runs an X terminal application. Uses GKsu to ask the password."\
+icon="/usr/share/pixmaps/gksu-debian.xpm"\
+command="/usr/bin/gksu -u root /usr/bin/x-terminal-emulator"
+?package(gnome-control-center):needs="X11" section="Applications/System/Administration" \
+  hints="Gnome" title="Gnome Control Center" \
+  icon="/usr/share/pixmaps/gnome-control-center.xpm" \
+  command="/usr/bin/gnome-control-center"
+?package(gnome-dictionary):needs="X11" \
+  section="Applications/Text" \
+  title="GNOME Dictionary" command="/usr/bin/gnome-dictionary" \
+  icon="/usr/share/pixmaps/gdict.xpm" hints="Gnome"
+
+?package(gnome-mplayer):\
+	needs="X11" \
+	section="Applications/Video" \
+	title="GNOME MPlayer" \
+	command="gnome-mplayer" \
+	icon="/usr/share/pixmaps/gnome-mplayer.xpm"
+?package(gnome-nettool):				\
+	needs="X11"					\
+	section="Applications/System/Administration"	\
+	title="GNOME Network Tool"			\
+	command="/usr/bin/gnome-nettool"		\
+	hints="Network"					\
+	icon="/usr/share/pixmaps/gnome-nettool.xpm"	\
+	longtitle="Network Information Tools"		\
+	description="Front-end to various networking command-line tools"
+?package(gnome-system-monitor):needs="X11" section="Applications/System/Monitoring" \
+  title="GNOME system monitor" command="/usr/bin/gnome-system-monitor"
+?package(gnome-system-tools):needs="X11" section="Applications/System/Administration"\
+  hints="Time"\
+  title="Time Admin" command="/usr/bin/time-admin"\
+  icon="/usr/share/gnome-system-tools/pixmaps/time.xpm"
+
+?package(gnome-system-tools):needs="X11" section="Applications/System/Administration"\
+  hints="Network"\
+  title="Shares Admin" command="/usr/bin/shares-admin"\
+  icon="/usr/share/gnome-system-tools/pixmaps/shares.xpm"
+
+?package(gnome-system-tools):needs="X11" section="Applications/System/Administration"\
+  hints="Users"\
+  title="User accounts Admin" command="/usr/bin/users-admin"\
+  icon="/usr/share/gnome-system-tools/pixmaps/users.xpm"
+
+?package(gnome-system-tools):needs="X11" section="Applications/System/Administration"\
+  hints="RunLevel"\
+  title="Services Admin" command="/usr/bin/services-admin"\
+  icon="/usr/share/gnome-system-tools/pixmaps/services.xpm"
+
+?package(gnome-system-tools):needs="X11" section="Applications/System/Administration"\
+  hints="Network"\
+  title="Network Admin" command="/usr/bin/network-admin"\
+  icon="/usr/share/gnome-system-tools/pixmaps/network.xpm"
+?package(gnome-terminal):needs="X11"\
+  section="Applications/Terminal Emulators"\
+  hints="Gnome"\
+  title="Gnome Terminal"\
+  icon="/usr/share/pixmaps/gnome-terminal.xpm"\
+  command="/usr/bin/gnome-terminal"
+?package(gucharmap):needs="X11" section="Applications/Text"\
+  title="Character map" command="/usr/bin/gucharmap"
+?package(hitori):needs="X11" section="Games/Puzzles" \
+  title="Hitori" command="/usr/games/hitori" \
+  icon="/usr/share/pixmaps/hitori.xpm"
+?package(icedove):needs="x11" section="Applications/Network/Communication" \
+	title="Icedove Mail" \
+        icon="/usr/share/pixmaps/icedove.xpm" \
+        command="icedove" hints="Mail"
+?package(iceweasel):needs="x11" section="Applications/Network/Web Browsing" \
+        title="Iceweasel" \
+        longtitle="Iceweasel Web Browser" \
+        icon="/usr/share/pixmaps/iceweasel.xpm" \
+        command="iceweasel"
+?package(icewm):command="/usr/bin/icewm" needs="wm" \
+               section="Window Managers" title="IceWM" \
+               icon="/usr/share/icewm/icons/icewm_16x16.xpm" \
+               icon16x16="/usr/share/icewm/icons/icewm_16x16.xpm" \
+               icon32x32="/usr/share/icewm/icons/icewm_32x32.xpm"
+?package(imagemagick-6):needs="X11" section="Applications/Graphics" \
+  title="ImageMagick" command="/usr/bin/display-im6 logo:" hints="Images" \
+  icon="/usr/share/pixmaps/display-im6.q16.xpm"
+?package(info): needs="text" title="Info" section="Help" \
+  longtitle="GNU Info browser" command="info"
+?package(inkscape): needs="X11" section="Applications/Graphics"\
+  hints="Vector"\
+  title="Inkscape" command="/usr/bin/inkscape"\
+  icon="/usr/share/pixmaps/inkscape.xpm"\
+  longtitle="Vector based drawing program"
+?package(k3b):\
+	needs="X11"\
+	section="Applications/File Management"\
+	title="K3b"\
+	command="/usr/bin/k3b"\
+	icon="/usr/share/pixmaps/k3b.xpm"
+?package(leafpad):needs="X11" section="Applications/Editors"\
+  title="LeafPad" command="/usr/bin/leafpad"\
+  longtitle="GTK+ based simple text editor"\
+  icon="/usr/share/pixmaps/leafpad.xpm"
+?package(libreoffice-base):needs="X11" section="Applications/Data Management" \
+  title="LibreOffice Base" command="/usr/bin/libreoffice --base"\
+  kderemove="y"\
+  icon="/usr/share/icons/hicolor/32x32/apps/libreoffice-base.xpm"
+?package(libreoffice-calc):needs="X11" section="Applications/Office"\
+  title="LibreOffice Calc" command="/usr/bin/libreoffice --calc"\
+  hints="Spreadsheets"\
+  kderemove="y"\
+  icon="/usr/share/icons/hicolor/32x32/apps/libreoffice-calc.xpm"
+?package(libreoffice-draw):needs="X11" section="Applications/Graphics"\
+  title="LibreOffice Draw" command="/usr/bin/libreoffice --draw"\
+  hints="Drawing"\
+  kderemove="y"\
+  icon="/usr/share/icons/hicolor/32x32/apps/libreoffice-draw.xpm"
+?package(libreoffice-impress):needs="X11" section="Applications/Office"\
+  title="LibreOffice Impress" command="/usr/bin/libreoffice --impress"\
+  hints="Presentation"\
+  kderemove="y"\
+  icon="/usr/share/icons/hicolor/32x32/apps/libreoffice-impress.xpm"
+?package(libreoffice-math):needs="X11" section="Applications/Science/Mathematics"\
+  title="LibreOffice Math" command="/usr/bin/libreoffice --math"\
+  hints="Equation,Editor,Formula"\
+  kderemove="y"\
+  icon="/usr/share/icons/hicolor/32x32/apps/libreoffice-math.xpm"
+?package(libreoffice-writer):needs="X11" section="Applications/Office"\
+  title="LibreOffice Writer" command="/usr/bin/libreoffice --writer"\
+  hints="Word Processors"\
+  kderemove="y"\
+  icon="/usr/share/icons/hicolor/32x32/apps/libreoffice-writer.xpm"
+?package(lxappearance):needs="X11" section="Applications/System/Administration"\
+  title="LXAppearance" longtitle="LXDE GTK+ theme switcher"\
+  description="LXAppearance is a GUI application for the Lightweight X11 Desktop Environment (LXDE). It is a new feature-rich GTK+ theme switcher able to change GTK+ themes, icon themes, and fonts used by applications. GNOME/KDE/Xfce user may use build-in theme, this works for GTK+ based lightweight desktop Environment."\
+  command="/usr/bin/lxappearance"
+?package(lxrandr):needs="X11" section="Applications/System/Hardware"\
+  hints="Monitors" title="LXRandR" longtitle="LXDE monitor configuration tool"\
+  description="LXRandR is a GUI application for the Lightweight X11 Desktop Environment (LXDE). It's a very basic monitor config tool utilizing the X extension called RandR to change the screen resolution on the fly."\
+  command="/usr/bin/lxrandr"
+?package(lxtask):needs="X11" section="Applications/System/Monitoring"\
+  title="LXTask" longtitle="LXDE task manager"\
+  description="LXTask is a GUI application for the Lightweight X11 Desktop Environment (LXDE). It allows monitoring and controlling of running processes."\
+  command="/usr/bin/lxtask"
+?package(lxterminal):needs="X11" section="Applications/Terminal Emulators"\
+  title="LXTerminal" longtitle="LXDE terminal emulator"\
+  description="LXTerminal is a VTE-based terminal emulator for the Lightweight X11 Desktop Environment (LXDE). It supports multiple tabs and has only minimal dependencies thus being completely desktop-independent. In order to reduce memory usage and increase the performance, all instances of the terminal are sharing a single process."\
+  command="/usr/bin/lxterminal" icon="/usr/share/pixmaps/lxterminal.xpm"
+?package(mc): \
+   needs="text" \
+   section="Applications/File Management" \
+   title="mc" \
+   longtitle="Midnight Commander" \
+   hints="File managers" \
+   command="/usr/bin/mc" \
+   icon="/usr/share/pixmaps/mc.xpm"
+?package(monodevelop):needs="X11" section="Applications/Programming"\
+  title="MonoDevelop" command="/usr/bin/monodevelop"\
+  icon="/usr/share/icons/hicolor/scalable/apps/monodevelop.svg"
+?package(mousepad):\
+  needs="X11"\
+  section="Applications/Editors"\
+  title="MousePad"\
+  command="/usr/bin/mousepad"\
+  icon="/usr/share/pixmaps/mousepad.xpm"
+?package(mutt): title="Mutt" \
+	section="Applications/Network/Communication" hints="Mail" \
+	needs="text" \
+	icon="/usr/share/pixmaps/mutt.xpm" \
+	command="/usr/bin/mutt"
+?package(nano):needs="text" section="Applications/Editors" hints="Text"	\
+  title="Nano" command="/bin/nano"				\
+  icon="/usr/share/nano/nano-menu.xpm"
+?package(nautilus):needs="X11" section="Applications/File Management" \
+  title="Nautilus" command="/usr/bin/nautilus" icon="/usr/share/pixmaps/nautilus.xpm"
+?package(nemo):needs="X11" section="Applications/File Management" \
+  title="Nemo" command="/usr/bin/nemo" icon="/usr/share/pixmaps/nemo.xpm"
+?package(obconf):needs="x11" section="Applications/System/Administration"\
+  title="Openbox Configuration Manager"\
+  command="/usr/bin/obconf" icon="/usr/share/pixmaps/obconf.xpm"
+?package(openbox):needs="wm" section="Window Managers" \
+  title="Openbox" command="/usr/bin/openbox" \
+  icon="/usr/share/pixmaps/openbox.xpm"
+?package(pcmanfm):needs="X11" section="Applications/File Management"\
+  title="PCManFM" longtitle="Real Tabbed File Manager"\
+  description="PCMan File Manager is an extremely fast and lightweight GTK+ based file manager."\
+  command="/usr/bin/pcmanfm" hints="File manager"
+?package(pidgin):needs="X11" section="Applications/Network/Communication" \
+  title="Pidgin" command="/usr/bin/pidgin" \
+  longtitle="Multi-protocol Instant Messaging Client" \
+  icon="/usr/share/pixmaps/pidgin-menu.xpm"
+?package(procps):needs="text" section="Applications/System/Monitoring" \
+        title="Top" \
+		description="Display Linux tasks" \
+		command="/usr/bin/top"
+?package(psmisc):needs="text" section="Applications/System/Monitoring" \
+  title="Pstree" \
+  description="Displays a tree of processes" \
+  command="/usr/bin/pstree.x11" \
+  icon="/usr/share/pixmaps/pstree16.xpm" 
+?package(psmisc):needs="vc" section="Applications/System/Monitoring" \
+  title="Pstree" \
+  description="Displays a tree of processes" \
+  command="/usr/bin/pstree"
+?package(python2.7):needs="text" section="Applications/Programming"\
+	title="Python (v2.7)"\
+	icon="/usr/share/pixmaps/python2.7.xpm"\
+	command="/usr/bin/python2.7"
+?package(python3.4):needs="text" section="Applications/Programming"\
+	title="Python (v3.4)"\
+	icon="/usr/share/pixmaps/python3.4.xpm"\
+	command="/usr/bin/python3.4"
+?package(quodlibet):needs="X11" \
+ section="Applications/Sound" \
+ title="Quod Libet" \
+ command="/usr/bin/quodlibet"
+?package(reportbug):needs="text" section="Applications/System/Administration" \
+  title="Reportbug" command="/usr/bin/reportbug --exit-prompt" \
+  hints="Bug reporting"
+
+?package(reportbug):needs="x11" section="Applications/System/Administration" \
+  title="Reportbug (GTK+)" command="/usr/bin/reportbug --exit-prompt --ui gtk2" \
+  hints="Bug reporting"
+?package(rhythmbox):needs="X11" \
+ section="Applications/Sound" \
+ title="Rhythmbox" \
+ command="/usr/bin/rhythmbox" \
+ icon="/usr/share/pixmaps/rhythmbox-small.xpm"
+?package(seahorse):needs="X11" \
+  section="Applications/System/Security" \
+  hints="Gnome" \
+  title="Seahorse" \
+  longtitle="GNOME frontend for managing GnuPG and SSH keys" \
+  command="/usr/bin/seahorse" \
+  icon="/usr/share/pixmaps/seahorse.xpm"
+?package(shotwell):needs="X11" section="Applications/Viewers"\
+  title="Shotwell" command="/usr/bin/shotwell"
+?package(sound-juicer):needs="X11" section="Applications/Sound" \
+  title="Sound Juicer" command="/usr/bin/sound-juicer" \
+  icon="/usr/share/pixmaps/sound-juicer.xpm"
+?package(synaptic):needs="X11" \
+  section="Applications/System/Package Management" \
+  title="Synaptic Package Manager" \
+  icon="/usr/share/synaptic/pixmaps/synaptic_32x32.xpm"\
+  command="x-terminal-emulator -e synaptic-pkexec"
+?package(tasksel):needs="text" section="Applications/System/Administration"\
+  title="Debian Task selector" command="su-to-root -c tasksel"
+?package(tcl8.6):needs="text"\
+	section="Applications/Programming"\
+	title="Tclsh8.6"\
+	command="/usr/bin/tclsh8.6"
+?package(telnet): \
+	needs="text" \
+	section="Applications/Network/Communication" \
+	title="Telnet" \
+	command="/usr/bin/telnet" \
+	hints="Terminal"
+?package(thunar):needs="X11" section="Applications/File Management"\
+  title="Thunar" longtitle="Xfce4 File Manager" hints="File manager" command="/usr/bin/thunar"
+?package(tk8.6):needs="x11"\
+	section="Applications/Programming"\
+	title="TkWish8.6"\
+	command="x-terminal-emulator -e /usr/bin/wish8.6"
+?package(totem):\
+needs="X11"\
+section="Applications/Video"\
+title="Totem"\
+icon="/usr/share/pixmaps/totem.xpm"\
+command="/usr/bin/totem"
+?package(transmission-gtk):needs="X11" section="Applications/Network/File Transfer" \
+  title="Transmission BitTorrent Client (GTK)" command="/usr/bin/transmission-gtk" \
+  icon="/usr/share/pixmaps/transmission.xpm"
+?package(usermode): \
+   needs="X11" \
+   section="Applications/System/Administration" \
+   title="Password" \
+   icon="/usr/share/pixmaps/password.xpm" \
+   command="/usr/bin/userpasswd"
+?package(usermode): \
+   needs="X11" \
+   section="Applications/System/Administration" \
+   title="About Myself" \
+   icon="/usr/share/pixmaps/user_icon.xpm" \
+   command="/usr/bin/userinfo"
+?package(usermode): \
+   needs="X11" \
+   section="Applications/System/Administration" \
+   title="Disk Management" \
+   icon="/usr/share/pixmaps/disks.xpm" \
+   command="/usr/bin/usermount"
+?package(vinagre): \
+ needs="X11" \
+ section="Applications/Network/Communication" \
+ title="Vinagre" \
+ description="Remote Desktop Viewer" \
+ command="vinagre"
+?package(vlc):command="/usr/bin/qvlc" hotkey="V" needs="X11" \
+              section="Applications/Video" title="VLC media player" \
+              icon="/usr/share/icons/hicolor/32x32/apps/vlc.xpm" hints="Video"
+?package(w3m):needs="text" \
+  section="Applications/Network/Web Browsing" \
+  title="w3m" \
+  command="/usr/bin/w3m /usr/share/doc/w3m/MANUAL.html" \
+  hints="Web browsers"
+?package(wmaker):needs="wm" \
+	section="Window Managers" title="Window Maker" \
+	command="/usr/bin/wmaker"
+?package(wmaker):needs="wmaker" \
+	section="/" title="Run..." \
+	command="SHEXEC \"%A(Run,Type Command:)\""
+?package(wmaker):needs="wmaker" \
+	section="/" title="Exit" sort="ZZ" \
+        command="EXIT"
+?package(wmaker):needs="wmaker" \
+	section="/" title="Exit session" sort="ZZ" \
+        command="SHUTDOWN"
+?package(wmaker):needs="wmaker" \
+	section="Window Maker" title="Restart" \
+        command="RESTART"
+?package(wmaker):needs="wmaker" \
+        section="Window Maker" title="Info Panel ..." \
+        command="INFO_PANEL"
+?package(wmaker):needs="wmaker" \
+        section="Window Maker" title="Legal Panel ..." \
+        command="LEGAL_PANEL"
+?package(wmaker):needs="wmaker" \
+        section="Window Maker" title="Preferences" \
+        command="EXEC" arg="WPrefs"
+?package(wmaker):needs="wmaker" \
+	section="WorkSpace" title="Workspaces" \
+        command="WORKSPACE_MENU"
+?package(wmaker):needs="wmaker" \
+	section="WorkSpace" title="Hide Others" \
+        command="HIDE_OTHERS"  
+?package(wmaker):needs="wmaker" \
+	section="WorkSpace" title="Show All" \
+        command="SHOW_ALL"
+?package(wmaker):needs="wmaker" \
+	section="WorkSpace" title="Arrange Icons" \
+        command="ARRANGE_ICONS"
+?package(wmaker):needs="wmaker" \
+	section="WorkSpace" title="Save Session" \
+        command="SAVE_SESSION"
+?package(wmaker):needs="wmaker" \
+	section="WorkSpace" title="Clear Session" \
+        command="CLEAR_SESSION"
+?package(wmaker):needs="wmaker" \
+	section="Window Maker" title="Refresh screen" \
+        command="REFRESH"
+?package(wmaker):needs="wmaker" \
+        section="WorkSpace" title="Appearance" \
+        command="OPEN_MENU" arg="appearance.menu"
+?package(wmaker):needs="wmappearance" \
+	section="Appearance" title="Background"\
+        sort="$" \
+        command="OPEN_MENU background.menu"
+?package(wmaker):needs="wmappearance" \
+	section="Appearance" title="Styles"\
+        sort="$" \
+        command="OPEN_MENU -noext LOCAL_STYLES_DIR STYLES_DIR USER_STYLES_DIR WITH setstyle"
+?package(wmaker):needs="wmappearance" \
+	section="Appearance" title="Themes"\
+        sort="$" \
+        command="OPEN_MENU -noext LOCAL_THEMES_DIR THEMES_DIR USER_THEMES_DIR WITH setstyle"
+?package(wmaker):needs="wmappearance" \
+	section="Appearance" title="Icon Sets"\
+        sort="ss" \
+        command="OPEN_MENU -noext LOCAL_ICON_SETS_DIR ICON_SETS_DIR USER_ICON_SETS_DIR WITH seticons"
+?package(wmaker):needs="wmappearance" \
+	section="Appearance" title="Save IconSet"\
+        sort="zz" \
+        command="EXEC geticonset USER_ICON_SETS_DIR/\"%a(IconSet name)\""
+?package(wmaker):needs="wmappearance" \
+	section="Appearance" title="Save Theme"\
+        sort="zz" \
+        command="EXEC getstyle -t USER_THEMES_DIR/\"%a(Theme name)\""
+?package(x11-apps):\
+ needs="x11"\
+ section="Games/Toys"\
+ hints="Clocks"\
+ longtitle="Oclock: analog clock for X"\
+ title="Oclock"\
+ command="oclock"
+?package(x11-apps):\
+ needs="x11"\
+ section="Applications/Network/Communication"\
+ hints="Mail"\
+ longtitle="Xbiff: mailbox flag for X"\
+ title="Xbiff"\
+ command="xbiff"
+?package(x11-apps):\
+ needs="x11"\
+ section="Applications/Science/Mathematics"\
+ hints="Calculators"\
+ longtitle="Xcalc: scientific calculator for X"\
+ title="Xcalc"\
+ command="xcalc"
+?package(x11-apps):\
+ needs="x11"\
+ section="Applications/System/Administration"\
+ longtitle="Xclipboard: clipboard for text cut and paste operations in X"\
+ title="Xclipboard"\
+ command="xclipboard"
+?package(x11-apps):\
+ needs="x11"\
+ section="Games/Toys"\
+ hints="Clocks"\
+ longtitle="Xclock (analog): analog clock for X"\
+ title="Xclock (analog)"\
+ command="xclock -analog"
+?package(x11-apps):\
+ needs="x11"\
+ section="Games/Toys"\
+ hints="Clocks"\
+ longtitle="Xclock (digital): digital clock for X"\
+ title="Xclock (digital)"\
+ command="xclock -digital -update 1"
+?package(x11-apps):\
+ needs="x11"\
+ section="Applications/System/Monitoring"\
+ longtitle="Xconsole: monitor system console messages with X"\
+ title="Xconsole"\
+ command="xconsole -file /dev/xconsole"
+?package(x11-apps):\
+ needs="x11"\
+ section="Applications/Viewers"\
+ hints="Troff"\
+ longtitle="Xditview: a ditroff file viewer for X"\
+ title="Xditview"\
+ command="xditview"
+?package(x11-apps):\
+ needs="x11"\
+ section="Applications/Editors"\
+ longtitle="Xedit: a simple text editor for X"\
+ title="Xedit"\
+ command="xedit"
+?package(x11-apps):\
+ needs="x11"\
+ section="Games/Toys"\
+ longtitle="Xeyes: demo in which a pair of eyes follow the mouse pointer in X"\
+ title="Xeyes"\
+ command="xeyes"
+?package(x11-apps):\
+ needs="x11"\
+ section="Applications/System/Monitoring"\
+ longtitle="Xload: system load average display for X"\
+ title="Xload"\
+ command="xload"
+?package(x11-apps):\
+ needs="x11"\
+ section="Games/Toys"\
+ longtitle="Xlogo: demo which displays the X logo"\
+ title="Xlogo"\
+ command="xlogo"
+?package(x11-apps):\
+ needs="x11"\
+ section="Applications/Accessibility"\
+ longtitle="Xmag: magnify parts of the X screen"\
+ title="Xmag"\
+ command="xmag"
+?package(x11-apps):\
+ needs="x11"\
+ section="Help"\
+ longtitle="Xman: manual page browser for X"\
+ title="Xman"\
+ command="xman"
+?package(x11-apps):\
+ needs="x11"\
+ section="Applications/Graphics"\
+ hints="Screenshot"\
+ longtitle="X Window Snapshot: take snapshot of any X window (xwd|xwud)"\
+ title="X Window Snapshot"\
+ command="xwd | xwud"
+?package(x11-utils):\
+ needs="x11"\
+ section="Applications/System/Administration"\
+ longtitle="Editres: resource editor for X Toolkit applications"\
+ title="Editres"\
+ command="editres"
+?package(x11-utils):\
+ needs="x11"\
+ section="Applications/System/Monitoring"\
+ longtitle="Xev: display X events"\
+ title="Xev"\
+ command="x-terminal-emulator -e xev"
+?package(x11-utils):\
+ needs="x11"\
+ section="Applications/System/Administration"\
+ hints="Fonts"\
+ longtitle="Xfontsel: font viewer/selector for X"\
+ title="Xfontsel"\
+ command="xfontsel"
+?package(x11-utils):\
+ needs="x11"\
+ section="Applications/System/Administration"\
+ longtitle="Xkill: tool to kill X clients by clicking on their windows"\
+ title="Xkill"\
+ command="xkill"
+?package(x11-xserver-utils):\
+ needs="x11"\
+ section="Applications/System/Administration"\
+ longtitle="Xrefresh: redraw X screen"\
+ title="Xrefresh"\
+ command="xrefresh"
+?package(x11-xserver-utils):\
+ needs="x11"\
+ section="Applications/System/Hardware"\
+ hints="Config"\
+ longtitle="Xvidtune: tool for customizing X server modelines"\
+ title="Xvidtune"\
+ command="xvidtune"
+?package(xarchiver):needs="X11" \
+ section="Applications/File Management" \
+ title="Xarchiver" \
+ longtitle="GTK+ frontend for most used compression formats" \
+ command="/usr/bin/xarchiver" \
+ icon="/usr/share/pixmaps/xarchiver.xpm"
+?package(xboard):needs="x11" \
+    section="Games/Board" \
+    hints="Chess" \
+    title="XBoard" \
+    command="/usr/games/xboard -xncp" \
+    icon="/usr/share/pixmaps/xboard.xpm"
+?package(xboard):needs="x11" \
+    section="Games/Board" \
+    hints="Chess" \
+    title="XBoard (passive chessboard)" \
+    command="/usr/games/xboard -ncp" \
+    icon="/usr/share/pixmaps/xboard.xpm"
+?package(xboard):needs="text" \
+    section="Games/Board" \
+    title="Default" \
+    hints="Chess" \
+    command="/usr/games/xboard -ics" \
+    icon="/usr/share/pixmaps/xboard.xpm"
+?package(xboard):needs="text" \
+    section="Games/Board" \
+    title="Internet Chess Club" \
+    hints="Chess" \
+    command="/usr/games/xboard -ics -icshost chessclub.com" \
+    icon="/usr/share/pixmaps/xboard.xpm"
+?package(xboard):needs="text" \
+    section="Games/Board" \
+    title="Chess Net" \
+    hints="Chess" \
+    command="/usr/games/xboard -ics -icshost chess.net" \
+    icon="/usr/share/pixmaps/xboard.xpm"
+?package(xboard):needs="text" \
+    section="Games/Board" \
+    title="Free I.C.S." \
+    hints="Chess" \
+    command="/usr/games/xboard -ics -icshost freechess.org" \
+    icon="/usr/share/pixmaps/xboard.xpm"
+?package(xchat):needs="X11" section="Applications/Network/Communication"\
+  title="X Chat" command="/usr/bin/xchat" hints="IRC"\
+  icon="/usr/share/icons/xchat.xpm"
+?package(xfce4-appfinder):\
+ needs="X11"\
+ section="Applications/System/Administration"\
+ command="xfce4-appfinder"\
+ title="Xfce Application Finder"\
+ longtitle="An application finder for the Xfce4 desktop environment"\
+ icon="/usr/share/pixmaps/xfce4-appfinder.xpm"
+?package(xfce4-mixer):\
+ needs="X11"\
+ section="Applications/Sound"\
+ title="Xfce Mixer"\
+ command="/usr/bin/xfce4-mixer"\
+ icon="/usr/share/pixmaps/xfce4-mixer.xpm"
+?package(xfce4-terminal):needs="X11"\
+  section="Applications/Terminal Emulators"\
+  command="/usr/bin/xfce4-terminal"\
+  title="Xfce Terminal"\
+  longtitle="Xfce Terminal Emulator"\
+  icon="/usr/share/pixmaps/xfce4-terminal.xpm"
+?package(xfdesktop4): needs="X11" section="Applications/File Management" \
+    command="xfdesktop" title="Xfdesktop" longtitle="Xfce desktop manager" \
+    hints="Xfce Desktop"
+?package(xfwm4): needs="wm" section="Window Managers" command="xfwm4" \
+  title="XFwm" longtitle="Xfce Window Manager" hints="Window manager"
+?package(xsane):command="/usr/bin/xsane" needs="X11" \
+	        section="Applications/Graphics" title="XSane" \
+                icon="/usr/share/pixmaps/xsane.xpm" \
+		description="XSane provides an advanced graphical \
+		user interface to control an image acquisition device \
+		such as a flatbed scanner or a camera."
+?package(xscreensaver):needs="x11" section="Screen/Saving" \
+	title="Enable XScreenSaver" \
+	command="/usr/bin/xscreensaver"
+?package(xscreensaver):needs="x11" section="Screen/Saving" \
+	title="Disable XScreenSaver" \
+	command="/usr/bin/xscreensaver-command -exit"
+?package(xscreensaver):needs="x11" section="Screen/Saving" \
+	title="Demo Screen Hacks" \
+	command="/usr/bin/xscreensaver-command -demo"
+?package(xscreensaver):needs="x11" section="Screen/Saving" \
+	title="ScreenSaver Preferences" \
+	command="/usr/bin/xscreensaver-command -prefs"
+?package(xscreensaver):needs="x11" section="Screen/Saving" \
+	title="Reinitialize XScreenSaver" \
+	command="/usr/bin/xscreensaver-command -restart"
+?package(xscreensaver):needs="x11" section="Screen/Saving" \
+	title="Activate ScreenSaver (Random)" \
+	command="/usr/bin/xscreensaver-command -activate"
+?package(xscreensaver):needs="x11" section="Screen/Saving" \
+	title="Activate ScreenSaver (Next)" \
+	command="/usr/bin/xscreensaver-command -next"
+?package(xscreensaver):needs="x11" section="Screen/Saving" \
+	title="Activate ScreenSaver (Previous)" \
+	command="/usr/bin/xscreensaver-command -prev"
+?package(xscreensaver):needs="x11" section="Screen/Locking" \
+	title="Lock Screen (XScreenSaver)" \
+	command="/usr/bin/xscreensaver-command -lock"
+?package(xxkb):needs="x11" section="Applications/System/Administration" \
+  title="xxkb" command="/usr/bin/xxkb"
+?package(yelp):needs="X11"\
+  section="Help"\
+  hints="Gnome"\
+  title="yelp"\
+  command="/usr/bin/yelp"
