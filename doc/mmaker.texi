@@ -5,7 +5,7 @@
 @c %**end of header
 
 @copying
-Copyright @copyright{} 2002-2005  Oleg A. Khlybov, 2006-2008 Oleg A. Khlybov, Steve Fullenwider
+Copyright @copyright{} 2002-2015  Oleg A. Khlybov, 2006-2008 Oleg A. Khlybov, Steve Fullenwider
 @end copying
 
 @titlepage
