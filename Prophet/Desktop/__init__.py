@@ -322,6 +322,15 @@ class App(Prophet.App) :
 	def setExename(self) :
 		try :
 			cmd = self.desktop["Exec"]
+			# Currently all entry values are subject to semicolon splitting on parse:
+			### /bin/sh -c "foo; bar"
+			# While this is generally incorrect, it is as it is.
+			# However, this causes the Exec processing to fail when command line contains semicolons
+			# as a tuple is returned while string is expected.
+			# As a workaround, we merge the tuples back for the Exec entries.
+			### Reported by David Niklas.
+			if isinstance(cmd, tuple) :
+				cmd = ";".join(map(str, cmd))
 			# According to some reports, newer Debian-based distros
 			# (notably, Ubuntu 5.10+) make an attempt to generate .desktop's
 			# directly from their (Debian-style) database which means all those
