@@ -115,4 +115,3 @@ GNOME = Kw("GNOME")
 Motif = Kw("Motif")
 Java = Kw("Java")
 ConsoleOnly = Kw("ConsoleOnly")
-
