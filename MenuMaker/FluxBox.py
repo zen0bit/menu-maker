@@ -38,7 +38,8 @@ class SysMenu(MenuMaker.Menu):
         subs = [X("Workspaces", "workspaces")]
         try:
             subs += [StylesMenu([os.path.join(fluxbox().prefix,
-                                              "share/fluxbox/styles"), "~/.fluxbox/styles"])]
+                                              "share/fluxbox/styles"),
+                                 "~/.fluxbox/styles"])]
         except Prophet.NotSet:
             pass
         subs += [

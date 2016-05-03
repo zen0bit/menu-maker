@@ -40,7 +40,9 @@ class estudio(_App, _X11App):
     keywords = KwS(Development, IDE, Debugger)
 
     def getPrefixes(self):
-        return super(estudio, self).getPrefixes() + "$ISE_EIFFEL/studio/spec/$ISE_PLATFORM"
+        return super(
+            estudio,
+            self).getPrefixes() + "$ISE_EIFFEL/studio/spec/$ISE_PLATFORM"
 
 
 # TODO : Komodo

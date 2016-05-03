@@ -95,7 +95,8 @@ class ZeroG(App):
         try:
             zerog = open(os.path.expanduser(self.registry), "r")
             pattern = re.compile(
-                ".*<product.*name=\"(%s)\".*location=\"(.*)\".*last_modified=\"(.*)\".*>.*" % self.magic)
+                ".*<product.*name=\"(%s)\".*location=\"(.*)\".*last_modified=\"(.*)\".*>.*" %
+                self.magic)
             found = []
             for x in zerog:
                 rx = pattern.match(x)
@@ -159,7 +160,11 @@ def _register(module, this=True):
         names = []
     if this:
         for k, v in module.__dict__.items():
-            if not k.startswith("_") and type(v) == type and issubclass(v, Prophet.App):
+            if not k.startswith("_") and isinstance(
+                    v,
+                    type) and issubclass(
+                    v,
+                    Prophet.App):
                 entries.append(v)
 
     for x in names:

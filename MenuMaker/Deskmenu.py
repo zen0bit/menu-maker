@@ -41,7 +41,7 @@ class Root(object):
 
     def __init__(self, subs):
         if writeFullMenu:
-            subs += [MenuMaker.Sep(),  X("windowlist=Windows"),
+            subs += [MenuMaker.Sep(), X("windowlist=Windows"),
                      X("workspaces=Workspaces")]
         super(Root, self).__init__(subs)
 

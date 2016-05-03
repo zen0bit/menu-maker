@@ -110,7 +110,16 @@ _kdeCfgMap = (
 def _dir2kws(dir):
     """Convert the directory name to the corresponding keyword set, if possible"""
     parts = [x.strip().lower() for x in dir.split("/")]
-    if len(fnmatch.filter(parts, "kde")) and len(fnmatch.filter(parts, "*config*") + fnmatch.filter(parts, "*sett*")):
+    if len(
+        fnmatch.filter(
+            parts,
+            "kde")) and len(
+            fnmatch.filter(
+                parts,
+                "*config*") +
+        fnmatch.filter(
+                parts,
+                "*sett*")):
         # Catching KDE/Configuration or KDE/Settings
         kws = [KDE, Kw("X-KDE-settings")]
         kws += [k for m,
@@ -219,7 +228,7 @@ class NotDesktop(Exception):
 def _string(x):
     """Pick up the most appropriate string representation out of all specified variants
         Choice is made with respect to current locale and type of specified argument"""
-    if type(x) == dict:
+    if isinstance(x, dict):
         return x[""]
     # FIXME : locale handling
     else:

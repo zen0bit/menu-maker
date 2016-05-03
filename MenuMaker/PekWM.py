@@ -30,7 +30,12 @@ class App(object):
         cmd = self.app.execmd
         if self.app.terminal:
             cmd = MenuMaker.terminal.runCmd(cmd)
-        return ['%sEntry = "%s" { Actions = "Exec %s &" }' % (indent(level), _map(self.app.name), cmd)]
+        return [
+            '%sEntry = "%s" { Actions = "Exec %s &" }' %
+            (indent(level),
+             _map(
+                self.app.name),
+                cmd)]
 
 
 class Menu(object):
@@ -88,7 +93,11 @@ class ThemesMenu(MenuMaker.Menu):
             themeset = os.path.join(
                 prefix, "share/pekwm/scripts/pekwm_themeset.pl")
             if Prophet.isExe(themeset):
-                for dir in (os.path.join(prefix, "share/pekwm/themes"), "~/.pekwm/themes"):
+                for dir in (
+                        os.path.join(
+                            prefix,
+                            "share/pekwm/themes"),
+                        "~/.pekwm/themes"):
                     if os.path.isdir(os.path.expanduser(dir)):
                         subs.append(X(None, "Dynamic %s %s" % (themeset, dir)))
 
@@ -108,9 +117,16 @@ class X(MenuMaker.Entry):
 
     def emit(self, level):
         if self.entry:
-            return ['%sEntry = "%s" { Actions = "%s" }' % (indent(level), _map(self.entry), self.actions)]
+            return [
+                '%sEntry = "%s" { Actions = "%s" }' %
+                (indent(level),
+                 _map(
+                    self.entry),
+                    self.actions)]
         else:
-            return ['%sEntry { Actions = "%s" }' % (indent(level), self.actions)]
+            return [
+                '%sEntry { Actions = "%s" }' %
+                (indent(level), self.actions)]
 
 
 windowMenu = '''

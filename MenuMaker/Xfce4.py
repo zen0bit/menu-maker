@@ -40,7 +40,13 @@ class App(object):
             term = " term=\"true\""
         else:
             term = ""
-        return ['%s<app name="%s" cmd="%s"%s/>' % (indent(level), _map(self.app.name), self.app.execmd, term)]
+        return [
+            '%s<app name="%s" cmd="%s"%s/>' %
+            (indent(level),
+             _map(
+                self.app.name),
+                self.app.execmd,
+                term)]
 
 
 class Menu(object):

@@ -1,6 +1,11 @@
 import sys
 
-if not (sys.version_info[0] * 100 + sys.version_info[1] * 10 + sys.version_info[2] >= 270):
+if not (
+        sys.version_info[0] *
+        100 +
+        sys.version_info[1] *
+        10 +
+        sys.version_info[2] >= 270):
     sys.exit("Python 2.7 or higher is required")
 
 from Prophet import warn, fatal
@@ -262,7 +267,8 @@ def _kdeMenu(id, kws):
         name = id
 
         def suitable(self, app):
-            return len(app.keywords & KwS(KDE, "X-KDE-settings")) and len(app.keywords & kws)
+            return len(
+                app.keywords & KwS(KDE, "X-KDE-settings")) and len(app.keywords & kws)
 
     return _Menu
 
@@ -378,8 +384,21 @@ class ToyGames(Menu):
 
 class Games(Menu):
     name = "Games"
-    keywords = KwS(Amusement, Game, ActionGame, AdventureGame, ArcadeGame, BoardGame, BlocksGame,
-                   CardGame, KidsGame, LogicGame, RolePlaying, Simulation, SportsGame, StrategyGame)
+    keywords = KwS(
+        Amusement,
+        Game,
+        ActionGame,
+        AdventureGame,
+        ArcadeGame,
+        BoardGame,
+        BlocksGame,
+        CardGame,
+        KidsGame,
+        LogicGame,
+        RolePlaying,
+        Simulation,
+        SportsGame,
+        StrategyGame)
 
     def __init__(self, subs):
         subs = [
@@ -397,8 +416,19 @@ class Multimedia(Menu):
 
 class NetApps(Menu):
     name = "Network"
-    keywords = KwS(Network, Dialup, InstantMessaging, IRCClient, FileTransfer,
-                   HamRadio, News, Email, P2P, RemoteAccess, Telephony, WebBrowser)
+    keywords = KwS(
+        Network,
+        Dialup,
+        InstantMessaging,
+        IRCClient,
+        FileTransfer,
+        HamRadio,
+        News,
+        Email,
+        P2P,
+        RemoteAccess,
+        Telephony,
+        WebBrowser)
 
 
 class GraphicApps(Menu):
@@ -409,5 +439,17 @@ class GraphicApps(Menu):
 
 class OfficeApps(Menu):
     name = "Office"
-    keywords = KwS(Office, Calendar, ContactManagement, Database, Dictionary, Chart,
-                   Finance, FlowChart, PDA, ProjectManagement, Presentation, Spreadsheet, WordProcessor)
+    keywords = KwS(
+        Office,
+        Calendar,
+        ContactManagement,
+        Database,
+        Dictionary,
+        Chart,
+        Finance,
+        FlowChart,
+        PDA,
+        ProjectManagement,
+        Presentation,
+        Spreadsheet,
+        WordProcessor)

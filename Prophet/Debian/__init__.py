@@ -205,7 +205,18 @@ class App(Prophet.App):
             # elsewhere therefore we have to scan PATH for it
             cmd = os.path.basename(cmd)
             # List of globs of unwanted commands
-            if cmd in ("sh", "bash", "csh", "tcsh", "zsh", "ls", "killall", "echo", "nice", "xmessage", "xlock"):
+            if cmd in (
+                    "sh",
+                    "bash",
+                    "csh",
+                    "tcsh",
+                    "zsh",
+                    "ls",
+                    "killall",
+                    "echo",
+                    "nice",
+                    "xmessage",
+                    "xlock"):
                 # Debian seems to have lots of shell commands. While it would be nice
                 # to try to analyze them, this isn't a priority since they're often
                 # too Debian-specific.

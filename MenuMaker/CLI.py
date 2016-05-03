@@ -108,10 +108,15 @@ def tOpt(option, opt, value, parser):
 class OP(_OP):
 
     def print_help(self):
-        sys.stdout.write("This is %s %s, a 100%% Python heuristics-driven menu generator\n" %
-                         (MenuMaker.pkgName, MenuMaker.pkgVer))
-        sys.stdout.write("%s %s %s <%s>\n\n" % (
-            MenuMaker.pkgHome, MenuMaker.copyright, MenuMaker.author, MenuMaker.email))
+        sys.stdout.write(
+            "This is %s %s, a 100%% Python heuristics-driven menu generator\n" %
+            (MenuMaker.pkgName, MenuMaker.pkgVer))
+        sys.stdout.write(
+            "%s %s %s <%s>\n\n" %
+            (MenuMaker.pkgHome,
+             MenuMaker.copyright,
+             MenuMaker.author,
+             MenuMaker.email))
         _OP.print_help(self)
         sys.stdout.write("\nfrontends (case insensitive):\n")
         for v in fronts.values():
@@ -179,7 +184,8 @@ try:
 except AttributeError:
     if not writeToStdout:
         fatal(
-            "%s doesn't support writing to a file; use -c option instead" % frontName)
+            "%s doesn't support writing to a file; use -c option instead" %
+            frontName)
 
 
 if not MenuMaker.writeFullMenu and not writeToStdout:
@@ -255,7 +261,8 @@ else:
         os.makedirs(dir)
     if not forceWrite and os.path.isfile(file):
         fatal(
-            "refuse to overwrite existing file %s; either delete it or use -f option" % file)
+            "refuse to overwrite existing file %s; either delete it or use -f option" %
+            file)
     file = open(file, "wt")
 
 menu.distribute(merged)

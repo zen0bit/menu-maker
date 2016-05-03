@@ -83,8 +83,7 @@ class SysMenu(MenuMaker.Menu):
             X('<menu id="client-list-menu"/>'),
             X('<item label="Reconfigure"> <action name="Reconfigure"/> </item>'),
             MenuMaker.Sep(),
-            X('<item label="Exit"> <action name="Exit"/> </item>')
-        ]
+            X('<item label="Exit"> <action name="Exit"/> </item>')]
         super(SysMenu, self).__init__(subs)
         self.align = MenuMaker.Entry.StickBottom
 

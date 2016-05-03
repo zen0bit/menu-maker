@@ -58,7 +58,8 @@ def isExe(exe):
     # have leading dot
     try:
         st = os.stat(exe)
-        return (stat.S_IMODE(st[stat.ST_MODE]) & stat.S_IXUSR) and not stat.S_ISDIR(st[stat.ST_MODE]) and not os.path.basename(exe).startswith(".")
+        return (stat.S_IMODE(st[stat.ST_MODE]) & stat.S_IXUSR) and not stat.S_ISDIR(
+            st[stat.ST_MODE]) and not os.path.basename(exe).startswith(".")
     except OSError:
         return False
 

@@ -41,7 +41,12 @@ class geticonset(Prophet.Legacy.App):
 class WPrefs(Prophet.Legacy.App):
 
     def getPrefixes(self):
-        return Prophet.PrefixSet(os.path.join(wmaker().prefix, "lib/GNUstep/Applications/WPrefs.app")) + super(WPrefs, self).getPrefixes()
+        return Prophet.PrefixSet(
+            os.path.join(
+                wmaker().prefix,
+                "lib/GNUstep/Applications/WPrefs.app")) + super(
+            WPrefs,
+            self).getPrefixes()
 
 
 class App(object):
@@ -51,9 +56,19 @@ class App(object):
         if self.app.terminal:
             cmd = MenuMaker.terminal.runCmd(cmd)
         if self._comma:
-            return ['%s("%s", EXEC, "%s"),' % (indent(level), _map(self.app.name), cmd)]
+            return [
+                '%s("%s", EXEC, "%s"),' %
+                (indent(level),
+                 _map(
+                    self.app.name),
+                    cmd)]
         else:
-            return ['%s("%s", EXEC, "%s")' % (indent(level), _map(self.app.name), cmd)]
+            return [
+                '%s("%s", EXEC, "%s")' %
+                (indent(level),
+                 _map(
+                    self.app.name),
+                    cmd)]
 
 
 class Menu(object):

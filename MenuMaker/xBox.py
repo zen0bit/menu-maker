@@ -21,7 +21,12 @@ class App(object):
         cmd = self.app.execmd
         if self.app.terminal:
             cmd = MenuMaker.terminal.runCmd(cmd)
-        return ['%s[exec] (%s) {%s}' % (indent(level), _map(self.app.name), cmd)]
+        return [
+            '%s[exec] (%s) {%s}' %
+            (indent(level),
+             _map(
+                self.app.name),
+                cmd)]
 
 
 class Menu(object):
