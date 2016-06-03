@@ -132,8 +132,7 @@ _shComplexCmd = re.compile("(;.*){2,}|\||&&|\(|\)|\{|\}")
 class App(object):
 
     """Single application that has specific executable and thus can be put into a menu"""
-        Console = Kw("Console")
-        Console = Kw("Console")
+    Console = Kw("Console")
     XWindow = Kw("XWindow")
     GNOME = Kw("GNOME")
     KDE = Kw("KDE")

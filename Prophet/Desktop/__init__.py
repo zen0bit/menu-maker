@@ -98,7 +98,7 @@ _kdeCfgMap = (
     ("periph*", Kw("X-KDE-settings-peripherials")),
     ("Hardware", Kw("X-KDE-settings-hardware")),
     ("power*", Kw("X-KDE-settings-power")),
-    ("*info*", Kw("X-KDE-information"))("*info*", Kw("X-KDE-information"))
+    ("*info*", Kw("X-KDE-information"))
 )
 
 # Some ugly Linux distros, notably Mandrake, are known for shipping broken (???!)
@@ -155,6 +155,12 @@ def scan():
                 except (NotDesktop, Prophet.NotSet) as e:
                     if verbose > 1:
                         msg("REJECTED : " + str(e))
+                except UnicodeDecodeError:
+                        print("Utf-8 Decode Error: This should not happen!\n"
+                        "One of your desktop files is broken, it's name is:",
+                        desktop, "It shall be ignored, please tell the"
+                        "maintainer of the package and your distro!", sep='\n',
+                        file=sys.stderr)
 
     msg(" %d apps found" % len(result))
     return result

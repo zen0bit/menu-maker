@@ -1,0 +1,3 @@
+David <doark@mail.com>
+    Fixed Bugs I introduced (they were duplicate statements)
+    Worked around unicode decoding error in .desktop files.
