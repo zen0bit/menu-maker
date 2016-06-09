@@ -1,3 +1,4 @@
+import stat
 import sys
 import os.path
 import MenuMaker
@@ -192,33 +193,29 @@ if not MenuMaker.writeFullMenu and not writeToStdout:
     fatal(
         "-i MUST be used in conjunction with -c; this is done to prevent accidental overwriting of the custom menu")
 
-import Prophet.Desktop
 # Postpone the setup to the time when it's actually needed
-import Prophet.Legacy
-import Prophet.Debian
-
 msg("* scanning")
 
 if noDesktop:
     msg("  skipping desktop")
     desktop = []
-
 else:
+    import Prophet.Desktop
     desktop = Prophet.Desktop.scan()
 
 if noLegacy:
     msg("  skipping legacy")
     legacy = []
-
 else:
+    import Prophet.Legacy
     Prophet.Legacy.setup()
     legacy = Prophet.Legacy.scan()
 
 if noDebian:
     msg("  skipping Debian")
     debian = []
-
 else:
+    import Prophet.Debian
     debian = Prophet.Debian.scan()
 
 merged = Prophet.merge(legacy + desktop + debian)

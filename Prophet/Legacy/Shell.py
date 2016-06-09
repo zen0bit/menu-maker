@@ -101,6 +101,12 @@ class rox(_App, _X11App):
     keywords = KwS(FileManager, Shell)
 
 
+class rxvt(_Terminal):
+    name = "Rxvt"
+    comment = "Our X terminal emulator"
+    keywords = KwS(TerminalEmulator)
+
+
 class tuxcmd(_App, _X11App):
     name = "TuxCommander"
     comment = "File manager for X"
@@ -151,10 +157,9 @@ class xterm(_Terminal):
     keywords = KwS(TerminalEmulator, Core)
 
 
-class xvt(_Terminal):  # FIXME : do we need a separate entry for rxvt?
-    name = "Rxvt"
+class xvt(_Terminal):
+    name = "Xvt"
     comment = "X terminal emulator"
-    exes = ["rxvt", "xvt"]
     keywords = KwS(TerminalEmulator)
 
 

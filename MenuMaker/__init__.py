@@ -36,7 +36,8 @@ fronts = {
 terms = [
     (T.xterm, KwS("Xterm")),
     (T._xfterm, KwS("Xfterm")),
-    (T.xvt, KwS("Rxvt", "Xvt")),
+    (T.xvt, KwS("Xvt")),
+    (T.rxvt, KwS("Rxvt")),
     (T.aterm, KwS("Aterm")),
     (T.wterm, KwS("Wterm")),
     (T.Eterm, KwS("Eterm")),
@@ -57,8 +58,11 @@ def msg(s, newline=True):
 def indent(level):
     """Return indentation string for specified level"""
     x = ""
+    while(level > 2):
+        x += "        "
+        level -= 2
     for i in range(0, level):
-        x += "    "  # FIXME : make this stuff faster
+        x += "    "
     return x
 
 
