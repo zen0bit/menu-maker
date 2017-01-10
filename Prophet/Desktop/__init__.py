@@ -217,10 +217,12 @@ def _parseEntries(entries):
 
 def _parseValue(value):
     vl = [x.strip() for x in value.split(";") if not (x.strip() == "")]
-    if len(vl) > 1:
+    if len(vl) == 0:
+        return None
+    elif len(vl) > 1:
         return tuple(vl)
     else:
-        return value.strip()
+        return vl[0]
 
 
 class NotDesktop(Exception):
@@ -297,7 +299,11 @@ class App(Prophet.App):
 
     def setKeywords(self):
         try:
-            self.keywords = KwS(*self.desktop["Categories"])
+            cats = self.desktop["Categories"]
+            if type(cats) == tuple:
+                self.keywords = KwS(*cats)
+            else:
+                self.keywords = KwS(cats)
         except KeyError:
             if _kws:
                 self.keywords = _kws
