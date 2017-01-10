@@ -156,11 +156,8 @@ def scan():
                     if verbose > 1:
                         msg("REJECTED : " + str(e))
                 except UnicodeDecodeError:
-                        print("Utf-8 Decode Error: This should not happen!\n"
-                        "One of your desktop files is broken, it's name is:",
-                        desktop, "It shall be ignored, please tell the"
-                        "maintainer of the package and your distro!", sep='\n',
-                        file=sys.stderr)
+                    if verbose > 1:
+                        msg(".desktop UTF-8 decode issue in " + desktop)
 
     msg(" %d apps found" % len(result))
     return result
