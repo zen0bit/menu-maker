@@ -1,6 +1,6 @@
 pkgHome		= "http://menumaker.sourceforge.net"
 pkgName		= "MenuMaker"
-pkgVer		= "0.99.10"
+pkgVer		= "0.99.11"
 
 author		= "Oleg A. Khlybov"
 email		= "fougas@mail.ru"

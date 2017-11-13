@@ -21,6 +21,7 @@ omitEmptyMenu = True  # Whether to omit or to retain empty menu
 writeFullMenu = True
 
 fronts = {
+    Kw("JWM"): KwS("JWM"),
     Kw("IceWM"): KwS("IceWM"),
     Kw("BlackBox"): KwS("BlackBox"),
     Kw("FluxBox"): KwS("FluxBox"),

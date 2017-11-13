@@ -1,4 +1,4 @@
-AC_INIT(MenuMaker, 0.99.10)
+AC_INIT(MenuMaker, 0.99.11)
 
 AM_INIT_AUTOMAKE
 
