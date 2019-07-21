@@ -11,10 +11,11 @@ class Keyword(str):
 
     def __init__(self, s):
         t = ""
-        for x in s.split():
-            # FIXME : speed up the hashing by xor'ing the parts on which self is split
-            # instead of performing this string concatenation
-            t += x
+        if not type(s) == None:
+            for x in s.split():
+                # FIXME : speed up the hashing by xor'ing the parts on which self is split
+                # instead of performing this string concatenation
+                t += x
         self.hash = hash(t.lower())
         str.__init__(self)
 
