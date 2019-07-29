@@ -43,7 +43,8 @@ terms = [
     (T.wterm, KwS("Wterm")),
     (T.Eterm, KwS("Eterm")),
     (T._gterm, KwS("GNOME-terminal", "Gterm")),
-    (T._konsole, KwS("Konsole"))
+    (T._konsole, KwS("Konsole")),
+    (T.sakura, KwS("Sakura"))
 ]
 
 

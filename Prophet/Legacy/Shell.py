@@ -107,6 +107,12 @@ class rxvt(_Terminal):
     keywords = KwS(TerminalEmulator)
 
 
+class sakura(_Terminal):
+    name = "Sakura"
+    comment = "Terminal emulator using GTK and VTE"
+    keywords = KwS(TerminalEmulator)
+
+
 class tuxcmd(_App, _X11App):
     name = "TuxCommander"
     comment = "File manager for X"
