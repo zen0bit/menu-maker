@@ -133,7 +133,7 @@ class xfiles(_App, _X11App):
 
 
 class _xfterm(_Terminal):
-    exes = ["xfterm4", "xfterm"]
+    exes = ["xfce4-terminal", "xfterm4", "xfterm"]
     name = "Xfterm"
     comment = "X terminal emulator for Xfce"
     keywords = KwS(TerminalEmulator, Kw("Xfce"))
