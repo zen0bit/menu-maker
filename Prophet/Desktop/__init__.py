@@ -171,7 +171,7 @@ _section = re.compile("\s*?\[\s*(.*)\s*\].*?")
 # Match comments - lines starting with # or ;
 _skip = re.compile("\s*[\#\;].*")
 # Match any valid entry, e.g. key = value
-_entry = re.compile("\s*?(.*)\s*?\=\s*?(.*)\s*?")
+_entry = re.compile("\s*?([^\=]*)\s*?\=\s*?(.*)\s*?")
 # Match parametrized key, e.g. key[param]
 _pkey = re.compile("(\w+)\s*\[\s*(\w+)\s*\]")
 
