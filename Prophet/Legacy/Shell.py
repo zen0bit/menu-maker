@@ -14,6 +14,12 @@ class _Terminal(_App, _X11App):
         self._runCmd = self.execmd + " " + self.runFlag + " "
 
 
+class alacritty(_Terminal):
+    name = "Alacritty"
+    comment = "GPU-accelerated terminal emulator"
+    keywords = KwS(TerminalEmulator)
+
+
 class aterm(_Terminal):
     name = "Aterm"
     comment = "X terminal emulator"
@@ -89,6 +95,12 @@ class mc(_App, _ConsoleApp):
     keywords = KwS(FileManager, Shell)
 
 
+class qterminal(_Terminal):
+    name = "QTerminal"
+    comment = "Lightweight Qt-based terminal emulator"
+    keywords = KwS(TerminalEmulator)
+
+
 class rdesktop(_App, _X11App):
     name = "Rdesktop"
     comment = "MS Windows terminal client"
@@ -110,6 +122,12 @@ class rxvt(_Terminal):
 class sakura(_Terminal):
     name = "Sakura"
     comment = "Terminal emulator using GTK and VTE"
+    keywords = KwS(TerminalEmulator)
+
+
+class st(_Terminal):
+    name = "ST"
+    comment = "Simple suckless terminal emulator"
     keywords = KwS(TerminalEmulator)
 
 
