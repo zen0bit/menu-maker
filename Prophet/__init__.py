@@ -247,8 +247,9 @@ class App(object):
         # Raise NotSet if cmd is not "good enough" and thus isn't worth further consideration
         # Current implementation filters out complex commands and commands
         # that are started with ?sh (a frequent Debian case)
-        if _shStart.search(cmd) or _shComplexCmd.search(cmd):
-            raise NotSet("not good enough : " + cmd)
+        # There is also a possibility to get None instead of string when the key is missing
+        if cmd is None or _shStart.search(cmd) or _shComplexCmd.search(cmd):
+            raise NotSet("not good enough : " + str(cmd))
 
     def __setup__(self):
         self.setExename()
